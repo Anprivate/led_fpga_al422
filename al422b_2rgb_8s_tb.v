@@ -38,14 +38,17 @@ integer j;
 
 initial
 begin
-	for (j=3; j < 8192; j=j+1)
+	for (j=6; j < 8192; j=j+1)
 	begin
-		memory[j] <= 8'h02; //reset array
+		memory[j] <= 8'h00; //reset array
    end
 
-	memory[0] <= 8'h02;
-	memory[1] <= 8'h02;
-	memory[2] <= 8'h02;
+	memory[0] <= 8'hF3;
+	memory[1] <= 8'hF4;
+	memory[2] <= 8'hF5;
+	memory[3] <= 8'h80;
+	memory[4] <= 8'h81;
+	memory[5] <= 8'h82;
 	
 	in_nrst = 0;
 	in_clk = 0;                                                       

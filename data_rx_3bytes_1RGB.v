@@ -3,30 +3,30 @@ module data_rx_3bytes_1RGB(
 	input wire [7:0] in_data,
 	input wire [7:0] pwm_value,
 	
-//		lat_strobe, pix_cntr_strobe, row_cntr_strobe, alrst_strobe, 
-	output wire lat_strobe,
-	output wire pix_cntr_strobe,
-	output wire row_cntr_strobe,
+	output wire led_clk,
 	output wire pwm_cntr_strobe,
 	output wire alrst_strobe,
-	output wire led_clk,
 	output reg [2:0] rgb1, rgb2
 );
 
-	reg [2:0] phase_reg;
-	
+	reg [1:0] phase_cntr;
+	wire [2:0] phase_reg;
+	assign phase_reg[0] = (phase_cntr == 2'b00);
+	assign phase_reg[1] = (phase_cntr == 2'b01);
+	assign phase_reg[2] = (phase_cntr == 2'b10);
+
 	assign led_clk = phase_reg[2];
-	assign lat_strobe = phase_reg[2];
-	assign pix_cntr_strobe = phase_reg[1];
-	assign row_cntr_strobe = phase_reg[1];
 	assign pwm_cntr_strobe = phase_reg[0];
 	assign alrst_strobe = phase_reg[1];
 	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
-			phase_reg <= 3'b001;
+			phase_cntr <= 2'b00;
 		else
-			phase_reg <= {phase_reg[1:0],phase_reg[2]};
+			if (phase_cntr == 2'b10)
+				phase_cntr <= 2'b00;
+			else
+				phase_cntr <= phase_cntr + 1;
 
 	// in_data_buffer
 	reg [7:0] in_data_buffer;

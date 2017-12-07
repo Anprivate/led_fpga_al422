@@ -3,47 +3,44 @@ module data_rx_2bytes_2RGB(
 	input wire [7:0] in_data,
 	input wire [7:0] pwm_value,
 	
-	output reg last_phase_strobe,
-	output reg alrst_strobe,
-	output reg lat_strobe,
-	output reg led_clk,
+	output wire led_clk,
+	output wire pwm_cntr_strobe,
+	output wire alrst_strobe,
 	output reg [2:0] rgb1, rgb2
 );
 
-	reg [1:0] cur_phase;
+	reg [1:0] phase_cntr;
+	wire [3:0] phase_reg;
 	
-	reg tmp_led_clk;
-	always @(posedge in_clk)
-	begin
-		last_phase_strobe <= (cur_phase == 2'b10);
-		alrst_strobe <= (cur_phase == 2'b10);
-		lat_strobe <= (cur_phase == 2'b10);
-		tmp_led_clk <= (cur_phase == 2'b11);
-	end
+	assign phase_reg[0] = (phase_cntr == 2'h0);
+	assign phase_reg[1] = (phase_cntr == 2'h1);
+	assign phase_reg[2] = (phase_cntr == 2'h2);
+	assign phase_reg[3] = (phase_cntr == 2'h3);
 
-	always @(negedge in_clk)
-		led_clk <= tmp_led_clk;
+	assign led_clk = phase_reg[2];
+	assign pwm_cntr_strobe = phase_reg[1];
+	assign alrst_strobe = phase_reg[2];
 
-	reg [15:0] in_data_buffer;
-	always @(posedge in_clk)
-		if (cur_phase[0])
-			in_data_buffer [15:8] <= in_data;
-		else
-			in_data_buffer [7:0] <= in_data;
-		
-	always @(posedge in_clk)
-	begin
+	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
-			cur_phase <= 2'b00;
+			phase_cntr <= 2'h0;
 		else
-			cur_phase <= cur_phase + 1;
-	end
+			phase_cntr <= phase_cntr + 2'h1;
 	
+	reg [15:0] in_data_buffer;
+	always @(posedge in_clk or negedge in_nrst)
+		if (~in_nrst)
+			in_data_buffer <= 16'h0000;
+		else
+		begin
+			in_data_buffer [15:8] <= in_data;
+			in_data_buffer [7:0] <= in_data_buffer [15:8];
+		end
+		
 	wire [2:0] tmp_rgb;
 	color_comparator_rgb555 comparator_inst0(in_data_buffer, pwm_value[4:0], tmp_rgb[0], tmp_rgb[1], tmp_rgb[2]);
 	
 	always @(posedge in_clk or negedge in_nrst)
-	begin
 		if (~in_nrst)
 		begin
 			rgb1 <= 3'b000;
@@ -51,12 +48,10 @@ module data_rx_2bytes_2RGB(
 		end
 		else
 		begin
-			if (~cur_phase[0])
-				if (cur_phase[1])
-					rgb2 <= tmp_rgb;
-				else
+			if (phase_reg[2])
 					rgb1 <= tmp_rgb;
+			if (phase_reg[0])
+					rgb2 <= tmp_rgb;
 		end
-	end
 
 endmodule

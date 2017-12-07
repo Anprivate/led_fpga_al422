@@ -8,14 +8,14 @@
 `define TRUECOLOR	1
 //`define HIGHCOLOR	1
 
+// LED panel RGB inputs quantity - only one line must be uncommented
+`define RGB_out1	1
+//`define RGB_out2	1
+
 // LED panel scan type - only one line must be uncommented
 `define SCAN_x8 	1
 //`define SCAN_x16 	1
 //`define SCAN_x32	1
-
-// LED panel RGB inputs quantity - only one line must be uncommented
-`define RGB_out1	1
-//`define RGB_out2	1
 
 // LED panels total pixels count
 `define PIXEL_COUNT 	8
@@ -25,8 +25,11 @@
 `define LED_OE_ACTIVE_LOW	1
 //`define LED_CLK_ON_FALL		1
 
+// bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 bits for HIGHCOLOR
+`define PWM_COUNTER_WIDTH	2
+
 /***************************************************************************************************/
-// main modules body
+// main modules body - DON'T MODIFY ANYTHING BELOW THIS LINE!!!
 /***************************************************************************************************/
 module al422b_2rgb_8s (
 	input wire in_clk, in_nrst,
@@ -41,7 +44,8 @@ module al422b_2rgb_8s (
 	output wire [2:0] rgb1, rgb2
 );
 
-	reg led_lat, led_oe;
+	reg led_oe;
+	wire led_lat;
 	wire led_clk;
 	
 `ifdef LED_LAT_ACTIVE_LOW
@@ -64,41 +68,54 @@ module al422b_2rgb_8s (
 `endif
 	
 	reg [7:0] pwm_cntr;
+	wire [7:0] pwm_for_decoder;
 	
-	wire lat_strobe, pix_cntr_strobe, row_cntr_strobe, pwm_cntr_strobe, alrst_strobe;
+	// bits shuffling for PWM dithering
+//	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5], pwm_cntr[6], pwm_cntr[7]}; 
+	assign pwm_for_decoder = pwm_cntr;
 	
+	wire pwm_cntr_strobe, alrst_strobe;
+
 `ifdef TRUECOLOR
 	`ifdef RGB_out1
-	data_rx_3bytes_1RGB data_decoder(in_clk, in_nrst, in_data, pwm_cntr,
-		lat_strobe, pix_cntr_strobe, row_cntr_strobe, pwm_cntr_strobe, alrst_strobe, 
-		led_clk, rgb1, rgb2);
+		parameter PIXEL_COUNTER_PRELOAD = 2;
+		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
+		data_rx_3bytes_1RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
+			led_clk, pwm_cntr_strobe, alrst_strobe, 
+			rgb1, rgb2);
 	`endif
 	
 	`ifdef RGB_out2
-	data_rx_3bytes_2RGB data_decoder(in_clk, in_nrst, in_data, pwm_cntr,
-		lat_strobe, pix_cntr_strobe, row_cntr_strobe, pwm_cntr_strobe, alrst_strobe,
-		led_clk, rgb1, rgb2);
+		parameter PIXEL_COUNTER_PRELOAD = 1;
+		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
+		data_rx_3bytes_2RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
+			led_clk, pwm_cntr_strobe, alrst_strobe,
+			rgb1, rgb2);
 	`endif
 `endif
 
 `ifdef HIGHCOLOR
 	`ifdef RGB_out1
-	data_rx_2bytes_1RGB data_decoder(in_clk, in_nrst, in_data, pwm_cntr,
-		lat_strobe, pix_cntr_strobe, row_cntr_strobe, pwm_cntr_strobe, alrst_strobe, 
-		led_clk, rgb1, rgb2);
+		parameter PIXEL_COUNTER_PRELOAD = 2;
+		parameter PWM_PIXEL_COUNTER_CORRECTION = 1;
+		data_rx_2bytes_1RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
+			led_clk, pwm_cntr_strobe, alrst_strobe, 
+			rgb1, rgb2);
 	`endif
 	
 	`ifdef RGB_out2
-	data_rx_2bytes_2RGB data_decoder(in_clk, in_nrst, in_data, pwm_cntr,
-		lat_strobe, pix_cntr_strobe, row_cntr_strobe, pwm_cntr_strobe, alrst_strobe,
-		led_clk, rgb1, rgb2);
+		parameter PIXEL_COUNTER_PRELOAD = 1;
+		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
+		data_rx_2bytes_2RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
+			led_clk, pwm_cntr_strobe, alrst_strobe,
+			rgb1, rgb2);
 	`endif
 `endif
+	
+	parameter PIXEL_COUNTER_INIT = `PIXEL_COUNT - PIXEL_COUNTER_PRELOAD;
 
-
-`define	LED_LAT_PHASE	8'h02
-`define	OE_PREDELAY		2
-`define	OE_POSTDELAY	2
+	parameter OE_PREDELAY=2;
+	parameter OE_POSTDELAY = 2;
 
 	// pixel counter
 	parameter PIXEL_COUNTER_WIDTH = $clog2(`PIXEL_COUNT);
@@ -109,17 +126,20 @@ module al422b_2rgb_8s (
 	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
-			pixel_counter <= 0;
+			pixel_counter <= (PIXEL_COUNTER_INIT);
 		else
-			if (pix_cntr_strobe)
-				if (last_pixel_in_row)
+			if (led_clk)
+				if (pixel_counter == `PIXEL_COUNT - 1)
 					pixel_counter <= 0;
 				else
 					pixel_counter <= pixel_counter + 1;
 					
+	// led_lat			
+	assign led_lat = (last_pixel_in_row & led_clk);
+
 	// led_oe
-	parameter oe_on_pixel = `LED_LAT_PHASE + `OE_POSTDELAY;
-	parameter oe_off_pixel = (`LED_LAT_PHASE > `OE_PREDELAY) ? (`LED_LAT_PHASE - `OE_PREDELAY) : (`PIXEL_COUNT - 1 - `OE_PREDELAY + `LED_LAT_PHASE);
+	parameter oe_on_pixel = OE_POSTDELAY;
+	parameter oe_off_pixel = `PIXEL_COUNT - OE_PREDELAY;
 	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
@@ -131,15 +151,6 @@ module al422b_2rgb_8s (
 				if (pixel_counter == oe_off_pixel)
 					led_oe <= 1'b0;
 	
-	// led_lat			
-	wire tmp_led_lat; 
-	assign tmp_led_lat = (pixel_counter == `LED_LAT_PHASE);
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			led_lat <= 1'b0;
-		else
-			led_lat <= (tmp_led_lat & lat_strobe);
-
 	// led_row
 `ifdef SCAN_x32
 	parameter last_led_row_value = 5'b11111;
@@ -156,33 +167,54 @@ module al422b_2rgb_8s (
 	wire last_led_row;
 	assign last_led_row = (led_row == last_led_row_value);
 	
-	wire last_led_row_for_alrst;
-	assign last_led_row_for_alrst = (led_row == last_led_row_value - 5'b00001);
+	parameter LED_ROW_INITIAL = last_led_row_value - 5'h01;
 	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
-			led_row <= (last_led_row_value - 8'h1);
+			led_row <= LED_ROW_INITIAL;
 		else
 			if (led_lat)
 				if (last_led_row)
-					led_row <= 5'b00000;
+					led_row <= 5'h00;
 				else
-					led_row <= led_row + 5'b00001;
+					led_row <= led_row + 5'h01;
 
 	// al422_nrst
+	wire row_for_alrst;
+	assign row_for_alrst = (led_row == last_led_row_value - 5'b00001);
+	
+	wire pix_cntr_for_alrst;
+	assign pix_cntr_for_alrst = (pixel_counter == (PIXEL_COUNTER_INIT - 1));
+
+	wire tmp_al422_nrst_strobe;
+	assign tmp_al422_nrst_strobe = alrst_strobe & pix_cntr_for_alrst & row_for_alrst;
+	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
 			al422_nrst <= 1'b1;
 		else
-			al422_nrst <= ~(alrst_strobe & last_pixel_in_row);
-//			al422_nrst <= ~(alrst_strobe & last_pixel_in_row & last_led_row_for_alrst);
+			al422_nrst <= ~tmp_al422_nrst_strobe;
 
 	// pwm_cntr
+	parameter MAX_PWM_COUNTER = (1 << `PWM_COUNTER_WIDTH) - 2;
+	
+	wire row_for_pwm;
+	assign row_for_pwm = (led_row == (last_led_row_value - 1)); 
+	
+	wire  pix_cntr_for_pwm;
+	assign pix_cntr_for_pwm = (pixel_counter == (PIXEL_COUNTER_INIT + PWM_PIXEL_COUNTER_CORRECTION));
+	
+	wire tmp_pwm_strobe;
+	assign tmp_pwm_strobe = pwm_cntr_strobe & pix_cntr_for_pwm & row_for_pwm; 
+	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
-			pwm_cntr <= 8'b00000000;
+			pwm_cntr <= MAX_PWM_COUNTER;
 		else
-			if (pwm_cntr_strobe & (pixel_counter == 0) & (led_row == last_led_row_value - 1))
-				pwm_cntr <= pwm_cntr + 8'h01;
+			if (tmp_pwm_strobe)
+				if (pwm_cntr == MAX_PWM_COUNTER)
+					pwm_cntr <= 8'h00;
+				else
+					pwm_cntr <= pwm_cntr + 8'h01;
 
 endmodule
