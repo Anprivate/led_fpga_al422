@@ -1,0 +1,2 @@
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.

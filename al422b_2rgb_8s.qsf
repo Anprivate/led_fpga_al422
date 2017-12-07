@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY MAX3000A
 set_global_assignment -name DEVICE "EPM3064ATC44-10"
-set_global_assignment -name TOP_LEVEL_ENTITY al422b_2rgb_8s
+set_global_assignment -name TOP_LEVEL_ENTITY led_al422_main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:25:16  NOVEMBER 08, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
@@ -51,7 +51,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
-set_global_assignment -name VERILOG_FILE al422b_2rgb_8s.v
 set_global_assignment -name MAX7000_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_37 -to in_clk
 set_location_assignment PIN_3 -to in_data[7]
@@ -87,3 +86,9 @@ set_global_assignment -name EDA_TEST_BENCH_FILE al422b_2rgb_8s_tb.v -section_id 
 set_location_assignment PIN_25 -to led_oe_out
 set_location_assignment PIN_23 -to led_lat_out
 set_location_assignment PIN_22 -to led_clk_out
+set_global_assignment -name VERILOG_FILE data_rx_3bytes_2RGB.v
+set_global_assignment -name VERILOG_FILE data_rx_3bytes_1RGB.v
+set_global_assignment -name VERILOG_FILE data_rx_2bytes_1RGB.v
+set_global_assignment -name VERILOG_FILE data_rx_2bytes_2RGB.v
+set_global_assignment -name VERILOG_FILE color_comparator_rgb555.v
+set_global_assignment -name VERILOG_FILE led_al422_main.v

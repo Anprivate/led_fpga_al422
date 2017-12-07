@@ -20,7 +20,7 @@ wire [7:0] memory_out;
 assign memory_out = memory[address];
 assign cntr_nrst = al422_nrst & in_nrst;
 
-al422b_2rgb_8s i1 (
+led_al422_main i1 (
 // port map - connection between master ports and signals/registers   
 	.al422_nrst(al422_nrst),
 	.in_clk(in_clk),

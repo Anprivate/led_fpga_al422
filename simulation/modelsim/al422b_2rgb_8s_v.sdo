@@ -1,0 +1,2018 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+
+// 
+// Device: Altera EPM3064ATC44-10 Package TQFP44
+// 
+
+// 
+// This SDF file should be used for ModelSim-Altera (Verilog) only
+// 
+
+(DELAYFILE
+  (SDFVERSION "2.1")
+  (DESIGN "led_al422_main")
+  (DATE "12/07/2017 16:45:39")
+  (VENDOR "Altera")
+  (PROGRAM "Quartus II 64-Bit")
+  (VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition")
+  (DIVIDER .)
+  (TIMESCALE 1 ps)
+
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_nrst\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (2300:2300:2300) (2300:2300:2300))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|phase_cntr\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|phase_cntr\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|phase_cntr\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|phase_cntr\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|Equal2\~6.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] combout (4500:4500:4500) (4500:4500:4500))
+        (IOPATH pterm1[1] combout (4500:4500:4500) (4500:4500:4500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pixel_counter\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pixel_counter\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pixel_counter\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pixel_counter\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pixel_counter\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pixel_counter\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_lat\~8.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] combout (4500:4500:4500) (4500:4500:4500))
+        (IOPATH pterm1[1] combout (4500:4500:4500) (4500:4500:4500))
+        (IOPATH pterm1[2] combout (4500:4500:4500) (4500:4500:4500))
+        (IOPATH pterm1[3] combout (4500:4500:4500) (4500:4500:4500))
+        (IOPATH pterm1[4] combout (4500:4500:4500) (4500:4500:4500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_clk\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (2300:2300:2300) (2300:2300:2300))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_row\[0\]\~reg0.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE led_row\[0\]\~reg0.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_oe.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE led_oe.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT papre[0] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge papre[0]) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_row\[1\]\~reg0.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE led_row\[1\]\~reg0.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT papre[0] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge papre[0]) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_row\[2\]\~reg0.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE led_row\[2\]\~reg0.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT papre[0] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge papre[0]) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_row\[4\]\~reg0.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE led_row\[4\]\~reg0.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE led_row\[3\]\~reg0.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE led_row\[3\]\~reg0.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE al422_nrst\~reg0.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[5] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[6] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[7] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[8] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[9] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE al422_nrst\~reg0.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT papre[0] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge papre[0]) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[3\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[3\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[3\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[3\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[5] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[6] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[3\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[3\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[4\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[4\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[5\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[5\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[6\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[5] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[6\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[7\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[5] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[6] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[7\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[5] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[6] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[7] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE pwm_cntr\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pxor[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pxor[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE pwm_cntr\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[2] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[3] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[4] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[5] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[6] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[7] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[8] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[9] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (SETUP pena[2] (posedge clk) (2900:2900:2900))
+      (SETUP pena[3] (posedge clk) (2900:2900:2900))
+      (SETUP pena[4] (posedge clk) (2900:2900:2900))
+      (SETUP pena[5] (posedge clk) (2900:2900:2900))
+      (SETUP pena[6] (posedge clk) (2900:2900:2900))
+      (SETUP pena[7] (posedge clk) (2900:2900:2900))
+      (SETUP pena[8] (posedge clk) (2900:2900:2900))
+      (SETUP pena[9] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+      (HOLD pena[2] (posedge clk) (1300:1300:1300))
+      (HOLD pena[3] (posedge clk) (1300:1300:1300))
+      (HOLD pena[4] (posedge clk) (1300:1300:1300))
+      (HOLD pena[5] (posedge clk) (1300:1300:1300))
+      (HOLD pena[6] (posedge clk) (1300:1300:1300))
+      (HOLD pena[7] (posedge clk) (1300:1300:1300))
+      (HOLD pena[8] (posedge clk) (1300:1300:1300))
+      (HOLD pena[9] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_buffer\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[3\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[3\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_reg_pwm\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[7\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[7\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[7\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[6\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[6\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[6\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[5\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[5\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[5\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE in_data\[4\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH padio dataout (1400:1400:1400) (1400:1400:1400))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|in_data_buffer\[4\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|in_data_buffer\[4\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|LessThan0\~18.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm0[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[4] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[4] pexpout (1200:1200:1200) (1200:1200:1200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|LessThan0\~24.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pexpin (0:0:0) (0:0:0))
+        (IOPATH pterm0[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[4] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[4] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pexpin pexpout (900:900:900) (900:900:900))
+        (IOPATH pexpin regin (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_carry.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pexpin (0:0:0) (0:0:0))
+        (IOPATH pterm0[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pexpin regin (2900:2900:2900) (2900:2900:2900))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_carry.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|comparator_out\~27.pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm0[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[4] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[1] pexpout (1200:1200:1200) (1200:1200:1200))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|comparator_out\~22.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pexpin (0:0:0) (0:0:0))
+        (IOPATH pterm0[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm0[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm1[4] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm2[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm3[4] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[0] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[1] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[2] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pterm4[3] pexpout (1200:1200:1200) (1200:1200:1200))
+        (IOPATH pexpin pexpout (900:900:900) (900:900:900))
+        (IOPATH pexpin regin (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|comparator_out.pcom)
+    (DELAY
+      (ABSOLUTE
+        (PORT pexpin (0:0:0) (0:0:0))
+        (IOPATH pterm0[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm0[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm1[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm3[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm4[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pexpin regin (2900:2900:2900) (2900:2900:2900))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|comparator_out.preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_rgb\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[1] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[2] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[3] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH pterm2[4] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_rgb\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|rgb1\[0\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|rgb1\[0\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_rgb\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_rgb\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|rgb1\[1\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|rgb1\[1\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|tmp_rgb\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|tmp_rgb\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_mcell")
+    (INSTANCE data_decoder\|rgb1\[2\].pcom)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH pterm1[0] regin (3200:3200:3200) (3200:3200:3200))
+        (IOPATH fbkin regin (5500:5500:5500) (5500:5500:5500))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_mcell_register")
+    (INSTANCE data_decoder\|rgb1\[2\].preg)
+    (DELAY
+      (ABSOLUTE
+        (PORT aclr (1300:1300:1300) (1300:1300:1300))
+        (PORT clk (1300:1300:1300) (1300:1300:1300))
+        (PORT pena[0] (1200:1200:1200) (1200:1200:1200))
+        (PORT pena[1] (1200:1200:1200) (1200:1200:1200))
+        (IOPATH (posedge clk) regout (1600:1600:1600) (1600:1600:1600))
+        (IOPATH (posedge aclr) regout (2900:2900:2900) (2900:2900:2900))
+      )
+    )
+    (TIMINGCHECK
+      (SETUP datain (posedge clk) (2900:2900:2900))
+      (SETUP pena[0] (posedge clk) (2900:2900:2900))
+      (SETUP pena[1] (posedge clk) (2900:2900:2900))
+      (HOLD datain (posedge clk) (1300:1300:1300))
+      (HOLD pena[0] (posedge clk) (1300:1300:1300))
+      (HOLD pena[1] (posedge clk) (1300:1300:1300))
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE rgb2\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE rgb2\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE rgb2\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_clk_out\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_lat_out\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_row\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_oe_out\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_row\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_row\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_row\[3\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE led_row\[4\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE al422_nrst\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE rgb1\[0\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE rgb1\[1\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+  (CELL
+    (CELLTYPE "max_asynch_io")
+    (INSTANCE rgb1\[2\]\~I.asynch_inst)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH datain padio (1800:1800:1800) (1800:1800:1800))
+      )
+    )
+  )
+)

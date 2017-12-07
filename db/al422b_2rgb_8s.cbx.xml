@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="al422b_2rgb_8s">
+		<CBX_INST_ENTRY INSTANCE_NAME="|led_al422_main|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_2nh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|led_al422_main|lpm_add_sub:Add2" CBX_FILE_NAME="add_sub_5nh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

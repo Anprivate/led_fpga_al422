@@ -1,0 +1,29 @@
+Quartus II Archive log --	D:/altera/al422b/al422b_2rgb_8s_tmp_archive.qarlog
+
+Archive:	D:/altera/al422b/al422b_2rgb_8s_tmp_archive.qar
+Date:		Thu Dec 07 16:46:34 2017
+Quartus II 64-Bit		13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+
+	=========== Files Selected: ===========
+D:/altera/al422b/al422b_2rgb_8s.qpf
+D:/altera/al422b/al422b_2rgb_8s.qsf
+D:/altera/al422b/al422b_2rgb_8s.sdc
+D:/altera/al422b/al422b_2rgb_8s_tb.v
+D:/altera/al422b/color_comparator_rgb555.v
+D:/altera/al422b/data_rx_2bytes_1RGB.v
+D:/altera/al422b/data_rx_2bytes_2RGB.v
+D:/altera/al422b/data_rx_3bytes_1RGB.v
+D:/altera/al422b/data_rx_3bytes_2RGB.v
+D:/altera/al422b/incremental_db/compiled_partitions/al422b_2rgb_8s.db_info
+D:/altera/al422b/led_al422_main.v
+d:/altera/13.0sp1/quartus/bin64/assignment_defaults.qdf
+	======= Total: 12 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Dec 07 16:46:35 2017
+Source archive file:	D:/altera/al422b/al422b_2rgb_8s_tmp_archive.qar
+Archive was extracted into	D:/altera/al422b_copy/
+		 - successfully.
