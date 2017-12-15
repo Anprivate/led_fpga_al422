@@ -5,12 +5,12 @@
 // input color data format - only one line must be uncommented
 // truecolor - 3 bytes per pixel
 // highcolor - 2 bytes per pixel, RGB555 format
-`define TRUECOLOR	1
-//`define HIGHCOLOR	1
+//`define TRUECOLOR	1
+`define HIGHCOLOR	1
 
 // LED panel RGB inputs quantity - only one line must be uncommented
-`define RGB_out1	1
-//`define RGB_out2	1
+//`define RGB_out1	1
+`define RGB_out2	1
 
 // LED panel scan type - only one line must be uncommented
 `define SCAN_x8 	1
@@ -21,11 +21,11 @@
 `define PIXEL_COUNT 	8
 
 // phases of output signals for LED. If commented - active HIGH and RISING for CLK
-//`define LED_LAT_ACTIVE_LOW	1
 `define LED_OE_ACTIVE_LOW	1
 //`define LED_CLK_ON_FALL		1
+//`define LED_LAT_ACTIVE_LOW	1
 
-// bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 bits for HIGHCOLOR
+// bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 or 6 bits for HIGHCOLOR
 `define PWM_COUNTER_WIDTH	2
 
 /***************************************************************************************************/
@@ -47,7 +47,7 @@ module led_al422_main(
 	reg led_oe;
 	wire led_lat;
 	wire led_clk;
-	
+
 `ifdef LED_LAT_ACTIVE_LOW
 	assign led_lat_out = ~led_lat;
 `else
@@ -67,16 +67,18 @@ module led_al422_main(
 	assign led_clk_out = led_clk;
 `endif
 	
-	reg [7:0] pwm_cntr;
-	wire [7:0] pwm_for_decoder;
 	
-	// bits shuffling for PWM dithering
-//	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5], pwm_cntr[6], pwm_cntr[7]}; 
-	assign pwm_for_decoder = pwm_cntr;
 	
 	wire pwm_cntr_strobe, alrst_strobe;
 
 `ifdef TRUECOLOR
+	reg [7:0] pwm_cntr;
+	wire [7:0] pwm_for_decoder;
+
+	// bits shuffling for PWM dithering
+	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5], pwm_cntr[6], pwm_cntr[7]}; 
+//	assign pwm_for_decoder = pwm_cntr;
+
 	`ifdef RGB_out1
 		parameter PIXEL_COUNTER_PRELOAD = 2;
 		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
@@ -95,6 +97,13 @@ module led_al422_main(
 `endif
 
 `ifdef HIGHCOLOR
+	reg [5:0] pwm_cntr;
+	wire [5:0] pwm_for_decoder;
+	
+	// bits shuffling for PWM dithering
+	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5]}; 
+//	assign pwm_for_decoder = pwm_cntr;
+
 	`ifdef RGB_out1
 		parameter PIXEL_COUNTER_PRELOAD = 2;
 		parameter PWM_PIXEL_COUNTER_CORRECTION = 1;
@@ -213,8 +222,8 @@ module led_al422_main(
 		else
 			if (tmp_pwm_strobe)
 				if (pwm_cntr == MAX_PWM_COUNTER)
-					pwm_cntr <= 8'h00;
+					pwm_cntr <= 0;
 				else
-					pwm_cntr <= pwm_cntr + 8'h01;
+					pwm_cntr <= pwm_cntr + 1;
 
 endmodule

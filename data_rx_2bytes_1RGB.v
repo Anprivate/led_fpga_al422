@@ -1,7 +1,7 @@
 module data_rx_2bytes_1RGB(
 	input wire in_clk, in_nrst,
 	input wire [7:0] in_data,
-	input wire [7:0] pwm_value,
+	input wire [5:0] pwm_value,
 	
 	output wire led_clk,
 	output wire pwm_cntr_strobe,
@@ -36,7 +36,7 @@ module data_rx_2bytes_1RGB(
 		end
 		
 	wire [2:0] tmp_rgb;
-	color_comparator_rgb555 comparator_inst0(in_data_buffer, pwm_value[4:0], tmp_rgb[0], tmp_rgb[1], tmp_rgb[2]);
+	color_comparator_rgb565 comparator_inst0(in_data_buffer, pwm_value, tmp_rgb[0], tmp_rgb[1], tmp_rgb[2]);
 	
 	always @(posedge in_clk or negedge in_nrst)
 	begin

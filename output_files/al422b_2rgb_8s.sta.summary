@@ -3,7 +3,7 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Setup 'in_clk'
-Slack : 8.100
+Slack : 1.300
 TNS   : 0.000
 
 Type  : Hold 'in_clk'

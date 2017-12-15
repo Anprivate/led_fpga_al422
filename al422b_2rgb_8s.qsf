@@ -92,3 +92,4 @@ set_global_assignment -name VERILOG_FILE data_rx_2bytes_1RGB.v
 set_global_assignment -name VERILOG_FILE data_rx_2bytes_2RGB.v
 set_global_assignment -name VERILOG_FILE color_comparator_rgb555.v
 set_global_assignment -name VERILOG_FILE led_al422_main.v
+set_global_assignment -name VERILOG_FILE color_comparator_rgb565.v

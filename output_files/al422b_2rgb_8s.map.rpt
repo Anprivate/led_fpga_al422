@@ -1,5 +1,5 @@
 Analysis & Synthesis report for al422b_2rgb_8s
-Thu Dec 07 16:45:33 2017
+Fri Dec 15 17:04:53 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,12 +13,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |led_al422_main
- 10. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
- 11. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+  8. Parameter Settings for User Entity Instance: Top-level Entity: |led_al422_main
+  9. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add1
+ 10. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add2
+ 11. Analysis & Synthesis Messages
+ 12. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -44,12 +43,12 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Dec 07 16:45:33 2017           ;
+; Analysis & Synthesis Status ; Successful - Fri Dec 15 17:04:53 2017           ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name               ; al422b_2rgb_8s                                  ;
 ; Top-level Entity Name       ; led_al422_main                                  ;
 ; Family                      ; MAX3000A                                        ;
-; Total macrocells            ; 53                                              ;
+; Total macrocells            ; 50                                              ;
 ; Total pins                  ; 25                                              ;
 +-----------------------------+-------------------------------------------------+
 
@@ -134,8 +133,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; data_rx_3bytes_1RGB.v            ; yes             ; User Verilog HDL File  ; D:/altera/al422b/data_rx_3bytes_1RGB.v                                    ;         ;
+; data_rx_2bytes_2RGB.v            ; yes             ; User Verilog HDL File  ; D:/altera/al422b/data_rx_2bytes_2RGB.v                                    ;         ;
 ; led_al422_main.v                 ; yes             ; User Verilog HDL File  ; D:/altera/al422b/led_al422_main.v                                         ;         ;
+; color_comparator_rgb565.v        ; yes             ; User Verilog HDL File  ; D:/altera/al422b/color_comparator_rgb565.v                                ;         ;
 ; lpm_add_sub.tdf                  ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
 ; addcore.inc                      ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc             ;         ;
 ; look_add.inc                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc            ;         ;
@@ -147,7 +147,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; a_csnbuffer.inc                  ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.inc         ;         ;
 ; a_csnbuffer.tdf                  ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;         ;
 ; altshift.tdf                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-; look_add.tdf                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.tdf            ;         ;
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
 
 
@@ -156,35 +155,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 53                   ;
-; Total registers      ; 44                   ;
+; Logic cells          ; 50                   ;
+; Total registers      ; 40                   ;
 ; I/O pins             ; 25                   ;
-; Parallel expanders   ; 4                    ;
+; Shareable expanders  ; 13                   ;
+; Parallel expanders   ; 6                    ;
 ; Maximum fan-out node ; in_clk               ;
-; Maximum fan-out      ; 44                   ;
-; Total fan-out        ; 390                  ;
-; Average fan-out      ; 5.00                 ;
+; Maximum fan-out      ; 40                   ;
+; Total fan-out        ; 419                  ;
+; Average fan-out      ; 4.76                 ;
 +----------------------+----------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                         ;
-+---------------------------------------+------------+------+--------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; Macrocells ; Pins ; Full Hierarchy Name                              ; Library Name ;
-+---------------------------------------+------------+------+--------------------------------------------------+--------------+
-; |led_al422_main                       ; 53         ; 25   ; |led_al422_main                                  ; work         ;
-;    |data_rx_3bytes_1RGB:data_decoder| ; 31         ; 0    ; |led_al422_main|data_rx_3bytes_1RGB:data_decoder ; work         ;
-+---------------------------------------+------------+------+--------------------------------------------------+--------------+
-
-
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+---------------------------------------------+----------------------------------------+
-; Register name                               ; Reason for Removal                     ;
-+---------------------------------------------+----------------------------------------+
-; data_rx_3bytes_1RGB:data_decoder|rgb2[0..2] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3       ;                                        ;
-+---------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                             ;
++--------------------------------------------------+------------+------+-------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                       ; Macrocells ; Pins ; Full Hierarchy Name                                                                       ; Library Name ;
++--------------------------------------------------+------------+------+-------------------------------------------------------------------------------------------+--------------+
+; |led_al422_main                                  ; 50         ; 25   ; |led_al422_main                                                                           ; work         ;
+;    |data_rx_2bytes_2RGB:data_decoder|            ; 33         ; 0    ; |led_al422_main|data_rx_2bytes_2RGB:data_decoder                                          ; work         ;
+;       |color_comparator_rgb565:comparator_inst0| ; 8          ; 0    ; |led_al422_main|data_rx_2bytes_2RGB:data_decoder|color_comparator_rgb565:comparator_inst0 ; work         ;
++--------------------------------------------------+------------+------+-------------------------------------------------------------------------------------------+--------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -192,9 +183,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------+-------+-----------------------------------------+
 ; Parameter Name               ; Value ; Type                                    ;
 +------------------------------+-------+-----------------------------------------+
-; PIXEL_COUNTER_PRELOAD        ; 2     ; Signed Integer                          ;
+; PIXEL_COUNTER_PRELOAD        ; 1     ; Signed Integer                          ;
 ; PWM_PIXEL_COUNTER_CORRECTION ; 0     ; Signed Integer                          ;
-; PIXEL_COUNTER_INIT           ; 6     ; Signed Integer                          ;
+; PIXEL_COUNTER_INIT           ; 7     ; Signed Integer                          ;
 ; OE_PREDELAY                  ; 2     ; Signed Integer                          ;
 ; OE_POSTDELAY                 ; 2     ; Signed Integer                          ;
 ; PIXEL_COUNTER_WIDTH          ; 3     ; Signed Integer                          ;
@@ -240,7 +231,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+-------------+----------------------------+
 ; Parameter Name         ; Value       ; Type                       ;
 +------------------------+-------------+----------------------------+
-; LPM_WIDTH              ; 8           ; Untyped                    ;
+; LPM_WIDTH              ; 6           ; Untyped                    ;
 ; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
 ; LPM_DIRECTION          ; ADD         ; Untyped                    ;
 ; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
@@ -254,7 +245,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; DEVICE_FAMILY          ; MAX3000A    ; Untyped                    ;
 ; USE_WYS                ; OFF         ; Untyped                    ;
 ; STYLE                  ; FAST        ; Untyped                    ;
-; CBXI_PARAMETER         ; add_sub_5nh ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_3nh ; Untyped                    ;
 ; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
 ; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
 ; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
@@ -269,7 +260,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Dec 07 16:45:31 2017
+    Info: Processing started: Fri Dec 15 17:04:51 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off al422b_2rgb_8s -c al422b_2rgb_8s
 Info (12021): Found 1 design units, including 1 entities, in source file al422b_2rgb_8s_tb.v
     Info (12023): Found entity 1: al422b_2rgb_8s_vlg_tst
@@ -285,8 +276,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file color_c
     Info (12023): Found entity 1: color_comparator_rgb555
 Info (12021): Found 1 design units, including 1 entities, in source file led_al422_main.v
     Info (12023): Found entity 1: led_al422_main
+Info (12021): Found 1 design units, including 1 entities, in source file color_comparator_rgb565.v
+    Info (12023): Found entity 1: color_comparator_rgb565
 Info (12127): Elaborating entity "led_al422_main" for the top level hierarchy
-Info (12128): Elaborating entity "data_rx_3bytes_1RGB" for hierarchy "data_rx_3bytes_1RGB:data_decoder"
+Info (12128): Elaborating entity "data_rx_2bytes_2RGB" for hierarchy "data_rx_2bytes_2RGB:data_decoder"
+Info (12128): Elaborating entity "color_comparator_rgb565" for hierarchy "data_rx_2bytes_2RGB:data_decoder|color_comparator_rgb565:comparator_inst0"
 Info (278001): Inferred 2 megafunctions from design logic
     Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add1"
     Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add2"
@@ -306,33 +300,32 @@ Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|altshift:r
 Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add1|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add1"
 Info (12130): Elaborated megafunction instantiation "lpm_add_sub:Add2"
 Info (12133): Instantiated megafunction "lpm_add_sub:Add2" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_WIDTH" = "6"
     Info (12134): Parameter "LPM_DIRECTION" = "ADD"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
-Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder[0]", which is child of megafunction instantiation "lpm_add_sub:Add2"
-Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|look_add:look_ahead_unit", which is child of megafunction instantiation "lpm_add_sub:Add2"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add2"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_add_sub:Add2"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add2"
+Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|addcore:adder|addcore:adder[0]", which is child of megafunction instantiation "lpm_add_sub:Add2"
 Info (12131): Elaborated megafunction instantiation "lpm_add_sub:Add2|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add2"
-Info (13014): Ignored 14 buffer(s)
-    Info (13019): Ignored 14 SOFT buffer(s)
+Info (13014): Ignored 13 buffer(s)
+    Info (13019): Ignored 13 SOFT buffer(s)
 Info (13000): Registers with preset signals will power-up high
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "rgb2[0]" is stuck at GND
-    Warning (13410): Pin "rgb2[1]" is stuck at GND
-    Warning (13410): Pin "rgb2[2]" is stuck at GND
 Info (280013): Promoted pin-driven signal(s) to global signal
     Info (280014): Promoted clock signal driven by pin "in_clk" to global clock signal
     Info (280015): Promoted clear signal driven by pin "in_nrst" to global clear signal
-Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 15 output pins
-    Info (21063): Implemented 53 macrocells
+    Info (21063): Implemented 50 macrocells
+    Info (21073): Implemented 13 shareable expanders
 Info (144001): Generated suppressed messages file D:/altera/al422b/output_files/al422b_2rgb_8s.map.smsg
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 425 megabytes
-    Info: Processing ended: Thu Dec 07 16:45:33 2017
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Fri Dec 15 17:04:53 2017
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+
