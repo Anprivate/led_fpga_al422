@@ -5,7 +5,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/data_rx_3bytes_1RGB.v}
+vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/data_rx_3bytes_2RGB.v}
 vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/led_al422_main.v}
 
 vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/al422b_2rgb_8s_tb.v}

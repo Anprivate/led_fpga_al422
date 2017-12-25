@@ -5,11 +5,11 @@ cModel Technology
 Z0 dD:\altera\al422b\simulation\modelsim
 val422b_2rgb_8s_vlg_tst
 !i10b 1
-!s100 mQ76Q2L]@:BZ9^5z[XbZo1
-IK_VR<XiKa_D20cNTGN7Qi1
+!s100 ik9oY]D2gTWklCVg[0k;>0
+IaX0F2AbOG8degD@e:IG>X3
 V>joJ_zM^[NkScg]R1EzMm0
 Z1 dD:\altera\al422b\simulation\modelsim
-w1512654359
+w1513852337
 8D:/altera/al422b/al422b_2rgb_8s_tb.v
 FD:/altera/al422b/al422b_2rgb_8s_tb.v
 L0 2
@@ -17,38 +17,38 @@ Z2 OV;L;10.1d;51
 r1
 !s85 0
 31
-!s108 1512655654.202000
+!s108 1513855832.905000
 !s107 D:/altera/al422b/al422b_2rgb_8s_tb.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/altera/al422b|D:/altera/al422b/al422b_2rgb_8s_tb.v|
 !s101 -O0
 Z3 o-vlog01compat -work work -O0
 Z4 !s92 -vlog01compat -work work +incdir+D:/altera/al422b -O0
-vdata_rx_3bytes_1RGB
-IiQIO[h8dMW3?o:`VEzMWE0
-VN9@i4TNh_@V6_gBN=^^0H1
+vdata_rx_3bytes_2RGB
+Ig@Tb3e]Cem__7YC5CVW6[1
+V0XQLS6>j<nUSSZXD8VD`f1
 R1
-w1512573741
-8D:/altera/al422b/data_rx_3bytes_1RGB.v
-FD:/altera/al422b/data_rx_3bytes_1RGB.v
+w1513855800
+8D:/altera/al422b/data_rx_3bytes_2RGB.v
+FD:/altera/al422b/data_rx_3bytes_2RGB.v
 L0 1
 R2
 r1
 31
 R3
-ndata_rx_3bytes_1@r@g@b
+ndata_rx_3bytes_2@r@g@b
 R4
 !i10b 1
-!s100 NTbEL2m`mR5T[Onc1E7hK2
+!s100 i9@9VonPVOLj8Ni3?eZ]I2
 !s85 0
-!s108 1512655653.845000
-!s107 D:/altera/al422b/data_rx_3bytes_1RGB.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/altera/al422b|D:/altera/al422b/data_rx_3bytes_1RGB.v|
+!s108 1513855832.614000
+!s107 D:/altera/al422b/data_rx_3bytes_2RGB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/altera/al422b|D:/altera/al422b/data_rx_3bytes_2RGB.v|
 !s101 -O0
 vled_al422_main
-Iho7ZLzOl8YZ56Ia9JAhUc0
-VI@4z1[jeDOb9ihl=W52lD1
+I3Q_AL1@G>JI_cSjYilaEF3
+V3YbA>W7:;@8agQNOHQ30c2
 R1
-w1512654321
+w1513853095
 8D:/altera/al422b/led_al422_main.v
 FD:/altera/al422b/led_al422_main.v
 L0 34
@@ -58,9 +58,9 @@ r1
 R3
 R4
 !i10b 1
-!s100 ;JUZ:hb?3cJUC4iL1VkLj1
+!s100 d1ga301]od4hcWLDkZFWH1
 !s85 0
-!s108 1512655654.014000
+!s108 1513855832.752000
 !s107 D:/altera/al422b/led_al422_main.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/altera/al422b|D:/altera/al422b/led_al422_main.v|
 !s101 -O0

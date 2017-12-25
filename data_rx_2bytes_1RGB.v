@@ -17,7 +17,7 @@ module data_rx_2bytes_1RGB(
 		
 	assign led_clk = phase_reg[0];
 	assign pwm_cntr_strobe = phase_reg[1];
-	assign alrst_strobe = phase_reg[0];
+	assign alrst_strobe = phase_reg[1];
 
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)

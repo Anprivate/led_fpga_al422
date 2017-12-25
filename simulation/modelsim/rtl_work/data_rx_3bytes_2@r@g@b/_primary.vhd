@@ -1,6 +1,6 @@
 library verilog;
 use verilog.vl_types.all;
-entity data_rx_3bytes_1RGB is
+entity data_rx_3bytes_2RGB is
     port(
         in_clk          : in     vl_logic;
         in_nrst         : in     vl_logic;
@@ -12,4 +12,4 @@ entity data_rx_3bytes_1RGB is
         rgb1            : out    vl_logic_vector(2 downto 0);
         rgb2            : out    vl_logic_vector(2 downto 0)
     );
-end data_rx_3bytes_1RGB;
+end data_rx_3bytes_2RGB;

@@ -2,17 +2,17 @@ library verilog;
 use verilog.vl_types.all;
 entity led_al422_main is
     generic(
-        PIXEL_COUNTER_PRELOAD: integer := 2;
+        PIXEL_COUNTER_PRELOAD: integer := 1;
         PWM_PIXEL_COUNTER_CORRECTION: integer := 0;
         PIXEL_COUNTER_INIT: vl_notype;
-        OE_PREDELAY     : integer := 2;
-        OE_POSTDELAY    : integer := 2;
-        PIXEL_COUNTER_WIDTH: integer := 3;
+        OE_PREDELAY     : integer := 10;
+        OE_POSTDELAY    : integer := 10;
+        PIXEL_COUNTER_WIDTH: integer := 5;
         oe_on_pixel     : vl_notype;
         oe_off_pixel    : vl_notype;
         last_led_row_value: vl_logic_vector(0 to 4) := (Hi0, Hi0, Hi1, Hi1, Hi1);
         LED_ROW_INITIAL : vl_notype;
-        MAX_PWM_COUNTER : integer := 2
+        MAX_PWM_COUNTER : integer := 254
     );
     port(
         in_clk          : in     vl_logic;

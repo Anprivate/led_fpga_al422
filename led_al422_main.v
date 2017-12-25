@@ -4,7 +4,7 @@
 
 // input color data format - only one line must be uncommented
 // truecolor - 3 bytes per pixel
-// highcolor - 2 bytes per pixel, RGB555 format
+// highcolor - 2 bytes per pixel, RGB565 format
 //`define TRUECOLOR	1
 `define HIGHCOLOR	1
 
@@ -18,7 +18,7 @@
 //`define SCAN_x32	1
 
 // LED panels total pixels count
-`define PIXEL_COUNT 	8
+`define PIXEL_COUNT 	64
 
 // phases of output signals for LED. If commented - active HIGH and RISING for CLK
 `define LED_OE_ACTIVE_LOW	1
@@ -26,7 +26,10 @@
 //`define LED_LAT_ACTIVE_LOW	1
 
 // bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 or 6 bits for HIGHCOLOR
-`define PWM_COUNTER_WIDTH	2
+`define PWM_COUNTER_WIDTH	8
+
+`define OE_PREDELAY	2
+`define OE_POSTDELAY	2
 
 /***************************************************************************************************/
 // main modules body - DON'T MODIFY ANYTHING BELOW THIS LINE!!!
@@ -67,7 +70,10 @@ module led_al422_main(
 	assign led_clk_out = led_clk;
 `endif
 	
-	
+	wire [2:0] rgb1_tmp;
+	wire [2:0] rgb2_tmp;
+	assign rgb1 = rgb1_tmp;
+	assign rgb2 = rgb2_tmp;
 	
 	wire pwm_cntr_strobe, alrst_strobe;
 
@@ -77,14 +83,13 @@ module led_al422_main(
 
 	// bits shuffling for PWM dithering
 	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5], pwm_cntr[6], pwm_cntr[7]}; 
-//	assign pwm_for_decoder = pwm_cntr;
 
 	`ifdef RGB_out1
 		parameter PIXEL_COUNTER_PRELOAD = 2;
 		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
 		data_rx_3bytes_1RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
 			led_clk, pwm_cntr_strobe, alrst_strobe, 
-			rgb1, rgb2);
+			rgb1_tmp, rgb2_tmp);
 	`endif
 	
 	`ifdef RGB_out2
@@ -92,7 +97,7 @@ module led_al422_main(
 		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
 		data_rx_3bytes_2RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
 			led_clk, pwm_cntr_strobe, alrst_strobe,
-			rgb1, rgb2);
+			rgb1_tmp, rgb2_tmp);
 	`endif
 `endif
 
@@ -102,14 +107,13 @@ module led_al422_main(
 	
 	// bits shuffling for PWM dithering
 	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5]}; 
-//	assign pwm_for_decoder = pwm_cntr;
 
 	`ifdef RGB_out1
 		parameter PIXEL_COUNTER_PRELOAD = 2;
 		parameter PWM_PIXEL_COUNTER_CORRECTION = 1;
 		data_rx_2bytes_1RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
 			led_clk, pwm_cntr_strobe, alrst_strobe, 
-			rgb1, rgb2);
+			rgb1_tmp, rgb2_tmp);
 	`endif
 	
 	`ifdef RGB_out2
@@ -117,14 +121,12 @@ module led_al422_main(
 		parameter PWM_PIXEL_COUNTER_CORRECTION = 0;
 		data_rx_2bytes_2RGB data_decoder(in_clk, in_nrst, in_data, pwm_for_decoder,
 			led_clk, pwm_cntr_strobe, alrst_strobe,
-			rgb1, rgb2);
+			rgb1_tmp, rgb2_tmp);
 	`endif
 `endif
 	
 	parameter PIXEL_COUNTER_INIT = `PIXEL_COUNT - PIXEL_COUNTER_PRELOAD;
 
-	parameter OE_PREDELAY=2;
-	parameter OE_POSTDELAY = 2;
 
 	// pixel counter
 	parameter PIXEL_COUNTER_WIDTH = $clog2(`PIXEL_COUNT);
@@ -147,8 +149,8 @@ module led_al422_main(
 	assign led_lat = (last_pixel_in_row & led_clk);
 
 	// led_oe
-	parameter oe_on_pixel = OE_POSTDELAY;
-	parameter oe_off_pixel = `PIXEL_COUNT - OE_PREDELAY;
+	parameter oe_on_pixel = `OE_POSTDELAY;
+	parameter oe_off_pixel = `PIXEL_COUNT - `OE_PREDELAY;
 	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)

@@ -41,30 +41,32 @@ module data_rx_3bytes_2RGB(
 			
 	reg comparator_out;
 
-	reg [3:0] tmp_reg_buffer, tmp_reg_pwm;
-	reg tmp_carry;
+	reg tmp_high, tmp_low, tmp_eq;
 	
-	wire first_stage_out;
-	assign first_stage_out = (in_data_buffer [7:4] > pwm_value [7:4]);
+	wire high_comp;
+	assign high_comp = (in_data_buffer [7:4] > pwm_value [7:4]);
 	
-	wire second_stage_out;
-	assign second_stage_out = (tmp_reg_buffer > tmp_reg_pwm);
+	wire high_eq;
+	assign high_eq = (in_data_buffer [7:4] == pwm_value [7:4]);
+	
+	wire low_comp;
+	assign low_comp = (in_data_buffer [3:0] > pwm_value [3:0]);
 		
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
 		begin
-			tmp_reg_buffer <= 4'h0;
-			tmp_reg_pwm <= 4'h0;
-			tmp_carry <= 1'b0;
+			tmp_high <= 1'b0;
+			tmp_low <= 1'b0;
+			tmp_eq <= 1'b0;
 			comparator_out <= 1'b0;
 		end
 		else
 		begin
-			tmp_reg_buffer <= in_data_buffer[3:0];
-			tmp_reg_pwm <= pwm_value [3:0];
-			tmp_carry <= first_stage_out;
+			tmp_high <= high_comp;
+			tmp_low <= low_comp;
+			tmp_eq <= high_eq;
 	
-			comparator_out <= tmp_carry | second_stage_out;
+			comparator_out <= (tmp_high | (tmp_eq & tmp_low));
 		end
 	
 	reg [2:0] tmp_rgb;

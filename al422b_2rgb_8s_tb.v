@@ -17,8 +17,8 @@ wire [2:0]  rgb2;
 
 wire [7:0] memory_out;
 
-assign memory_out = memory[address];
 assign cntr_nrst = al422_nrst & in_nrst;
+assign memory_out = memory[address];
 
 led_al422_main i1 (
 // port map - connection between master ports and signals/registers   
@@ -43,12 +43,12 @@ begin
 		memory[j] <= 8'h00; //reset array
    end
 
-	memory[0] <= 8'hF3;
-	memory[1] <= 8'hF4;
-	memory[2] <= 8'hF5;
-	memory[3] <= 8'h80;
-	memory[4] <= 8'h81;
-	memory[5] <= 8'h82;
+	memory[0] <= 8'hFF;
+	memory[1] <= 8'h00;
+	memory[2] <= 8'h00;
+	memory[3] <= 8'h00;
+	memory[4] <= 8'h00;
+	memory[5] <= 8'h00;
 	
 	in_nrst = 0;
 	in_clk = 0;                                                       
@@ -64,6 +64,10 @@ always @ (posedge in_clk)
 	if (~cntr_nrst)
 		address <= 16'h0;
 	else
+	begin
 		address <= address + 16'h1;
+//		memory_out <= memory[address];
+	end
+
 endmodule
 

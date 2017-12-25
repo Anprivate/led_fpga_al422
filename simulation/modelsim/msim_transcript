@@ -10,12 +10,12 @@
 # ** Warning: Copied D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/data_rx_3bytes_1RGB.v}
+# vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/data_rx_3bytes_2RGB.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module data_rx_3bytes_1RGB
+# -- Compiling module data_rx_3bytes_2RGB
 # 
 # Top level modules:
-# 	data_rx_3bytes_1RGB
+# 	data_rx_3bytes_2RGB
 # vlog -vlog01compat -work work +incdir+D:/altera/al422b {D:/altera/al422b/led_al422_main.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module led_al422_main
@@ -34,7 +34,7 @@
 # vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L max_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps al422b_2rgb_8s_vlg_tst 
 # Loading work.al422b_2rgb_8s_vlg_tst
 # Loading work.led_al422_main
-# Loading work.data_rx_3bytes_1RGB
+# Loading work.data_rx_3bytes_2RGB
 # 
 # add wave *
 # view structure
@@ -45,63 +45,3 @@
 # Break in Module al422b_2rgb_8s_vlg_tst at D:/altera/al422b/al422b_2rgb_8s_tb.v line 57
 # Simulation Breakpoint: Break in Module al422b_2rgb_8s_vlg_tst at D:/altera/al422b/al422b_2rgb_8s_tb.v line 57
 # MACRO ./al422b_2rgb_8s_run_msim_rtl_verilog.do PAUSED at line 18
-do wave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# delete wave *
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/in_nrst
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/in_clk
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/address
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/i1/in_data
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/i1/data_decoder/in_data_buffer
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/comparator_out
-# ** Error: (vish-4014) No objects found matching '/al422b_2rgb_8s_vlg_tst/i1/comparator_out'.
-# Executing ONERROR command at macro ./wave.do line 9
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/color_cntr
-# ** Error: (vish-4014) No objects found matching '/al422b_2rgb_8s_vlg_tst/i1/color_cntr'.
-# Executing ONERROR command at macro ./wave.do line 10
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/rgb_1_2
-# ** Error: (vish-4014) No objects found matching '/al422b_2rgb_8s_vlg_tst/i1/rgb_1_2'.
-# Executing ONERROR command at macro ./wave.do line 11
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/data_decoder/phase_reg
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/data_decoder/tmp_rgb
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/rgb1
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/rgb2
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/led_clk_out
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/led_lat_out
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/led_oe_out
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/pix_cntr_strobe
-# ** Error: (vish-4014) No objects found matching '/al422b_2rgb_8s_vlg_tst/i1/pix_cntr_strobe'.
-# Executing ONERROR command at macro ./wave.do line 19
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/i1/pixel_counter
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/i1/row_cntr_strobe
-# ** Error: (vish-4014) No objects found matching '/al422b_2rgb_8s_vlg_tst/i1/row_cntr_strobe'.
-# Executing ONERROR command at macro ./wave.do line 21
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/led_row
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/i1/pwm_cntr
-# add wave -noupdate -radix hexadecimal /al422b_2rgb_8s_vlg_tst/i1/pwm_for_decoder
-# add wave -noupdate /al422b_2rgb_8s_vlg_tst/al422_nrst
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 3} {150 ps} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 1
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ns
-# update
-# WaveRestoreZoom {0 ps} {348 ps}
-# restart -force
-# run 20000
-# wave cursor time -time 0 1
-# 0.00 ns
-# wave cursor configure 1 -name default
-# wave cursor see 1
