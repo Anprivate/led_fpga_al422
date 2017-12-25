@@ -25,9 +25,6 @@
 //`define LED_CLK_ON_FALL		1
 //`define LED_LAT_ACTIVE_LOW	1
 
-// bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 or 6 bits for HIGHCOLOR
-`define PWM_COUNTER_WIDTH	8
-
 `define OE_PREDELAY	2
 `define OE_POSTDELAY	2
 
@@ -78,8 +75,10 @@ module led_al422_main(
 	wire pwm_cntr_strobe, alrst_strobe;
 
 `ifdef TRUECOLOR
-	reg [7:0] pwm_cntr;
-	wire [7:0] pwm_for_decoder;
+	`define PWM_COUNTER_WIDTH	8
+	
+	reg [`PWM_COUNTER_WIDTH-1:0] pwm_cntr;
+	wire [`PWM_COUNTER_WIDTH-1:0] pwm_for_decoder;
 
 	// bits shuffling for PWM dithering
 	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5], pwm_cntr[6], pwm_cntr[7]}; 
@@ -102,8 +101,9 @@ module led_al422_main(
 `endif
 
 `ifdef HIGHCOLOR
-	reg [5:0] pwm_cntr;
-	wire [5:0] pwm_for_decoder;
+	`define PWM_COUNTER_WIDTH	6
+	reg [`PWM_COUNTER_WIDTH-1:0] pwm_cntr;
+	wire [`PWM_COUNTER_WIDTH-1:0] pwm_for_decoder;
 	
 	// bits shuffling for PWM dithering
 	assign pwm_for_decoder = {pwm_cntr[0], pwm_cntr[1], pwm_cntr[2], pwm_cntr[3], pwm_cntr[4], pwm_cntr[5]}; 

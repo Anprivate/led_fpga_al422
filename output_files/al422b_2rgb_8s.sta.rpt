@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for al422b_2rgb_8s
-Mon Dec 25 13:51:38 2017
+Mon Dec 25 16:19:55 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -86,7 +86,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------+--------+--------------------------+
 ; SDC File Path      ; Status ; Read at                  ;
 +--------------------+--------+--------------------------+
-; al422b_2rgb_8s.sdc ; OK     ; Mon Dec 25 13:51:38 2017 ;
+; al422b_2rgb_8s.sdc ; OK     ; Mon Dec 25 16:19:55 2017 ;
 +--------------------+--------+--------------------------+
 
 
@@ -313,32 +313,6 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[1]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
@@ -367,6 +341,32 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 ; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[5]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[5]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
 +-------+------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -406,12 +406,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 9.200 ; in_nrst   ; led_row[0]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; led_row[4]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; led_row[3]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[0]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[1]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; pwm_cntr[2]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; pwm_cntr[3]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; pwm_cntr[4]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[0]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; pwm_cntr[5]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[1]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
 ; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
@@ -453,12 +453,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 6.600 ; in_nrst   ; led_row[0]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; led_row[4]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; led_row[3]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[0]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[1]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; pwm_cntr[2]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; pwm_cntr[3]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; pwm_cntr[4]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[0]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; pwm_cntr[5]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[1]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
 ; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
@@ -671,7 +671,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 501      ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 532      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -681,7 +681,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 501      ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 532      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -738,7 +738,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 25 13:51:36 2017
+    Info: Processing started: Mon Dec 25 16:19:54 2017
 Info: Command: quartus_sta al422b_2rgb_8s -c al422b_2rgb_8s
 Info: qsta_default_script.tcl version: #1
 Info (306004): Started post-fitting delay annotation
@@ -771,8 +771,8 @@ Info (332102): Design is not fully constrained for hold requirements
 Info (144001): Generated suppressed messages file D:/altera/al422b/output_files/al422b_2rgb_8s.sta.smsg
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 355 megabytes
-    Info: Processing ended: Mon Dec 25 13:51:38 2017
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Mon Dec 25 16:19:55 2017
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
