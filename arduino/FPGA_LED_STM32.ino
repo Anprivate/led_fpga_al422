@@ -27,6 +27,7 @@ void loop() {
 
   uint8_t br = 0x08;
 
+  led_panel.clear();
   led_panel.drawCircle(16, 16, 10, led_panel.Color(0, 0, br));
 
   led_panel.setCursor(1, 1);
@@ -46,13 +47,33 @@ void loop() {
   led_panel.show();
 
   digitalWrite(PC13, HIGH);
-  x_coord++;
-  y_coord++;
-  if (x_coord >= width) {
-    x_coord = 0;
-    y_coord = 0;
+
+  delay(5000);
+
+  led_panel.clear();
+  for (uint16_t i = 0; i < width; i++) {
+    uint8_t c = i << 2;
+    uint8_t c2 = c + 128;
+
+    led_panel.drawPixel(i, 0, led_panel.Color(0, 0, c));
+    led_panel.drawPixel(i, 1, led_panel.Color(0, 0, c2));
+    led_panel.drawPixel(i, 2, led_panel.Color(0, c, 0));
+    led_panel.drawPixel(i, 3, led_panel.Color(0, c2, 0));
+    led_panel.drawPixel(i, 4, led_panel.Color(c, 0, 0));
+    led_panel.drawPixel(i, 5, led_panel.Color(c2, 0, 0));
+    led_panel.drawPixel(i, 6, led_panel.Color(c, c, c));
+    led_panel.drawPixel(i, 7, led_panel.Color(c2, c2, c2));
+    led_panel.drawPixel(i, 8, led_panel.Color(0, 255 - c, c));
+    led_panel.drawPixel(i, 9, led_panel.Color(0, 255 - c2, c2));
+    led_panel.drawPixel(i, 10, led_panel.Color(255 - c, 0, c));
+    led_panel.drawPixel(i, 11, led_panel.Color(255 - c2, 0, c2));
+    led_panel.drawPixel(i, 12, led_panel.Color(255 - c, c, 0));
+    led_panel.drawPixel(i, 13, led_panel.Color(255 - c2, c2, 0));
   }
-  delay(50);
+
+  led_panel.show();
+
+  delay(5000);
 }
 
 

@@ -57,47 +57,6 @@ uint8_t * LED_PANEL::getPixelAddress(uint16_t x, uint16_t y) {
   return pixels + pix_num * BPP;
 }
 
-
-void LED_PANEL::setPixelColor32(uint16_t x, uint16_t y, uint32_t c) {
-  uint8_t * tmp_ptr = getPixelAddress(x, y);
-
-  if (tmp_ptr == NULL) return;
-
-  if (BPP == 3) {
-    uint32_t tmp_c = c;
-    *tmp_ptr++ = tmp_c;
-    tmp_c >>= 8;
-    *tmp_ptr++ = tmp_c;
-    tmp_c >>= 8;
-    *tmp_ptr++ = tmp_c;
-  } else {
-    uint16_t tmp_c = Color(c >> 16, c >> 8, c);
-    *tmp_ptr++ = tmp_c;
-    tmp_c >>= 8;
-    *tmp_ptr++ = tmp_c;
-  }
-}
-
-void LED_PANEL::setPixelColor16(uint16_t x, uint16_t y, uint16_t c) {
-  uint8_t * tmp_ptr = getPixelAddress(x, y);
-
-  if (tmp_ptr == NULL) return;
-
-  if (BPP == 3) {
-    uint32_t tmp_c = expandColor(c);
-    *tmp_ptr++ = tmp_c;
-    tmp_c >>= 8;
-    *tmp_ptr++ = tmp_c;
-    tmp_c >>= 8;
-    *tmp_ptr++ = tmp_c;
-  } else {
-    uint16_t tmp_c = c;
-    *tmp_ptr++ = tmp_c;
-    tmp_c >>= 8;
-    *tmp_ptr++ = tmp_c;
-  }
-}
-
 void LED_PANEL::setPixelColor(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b) {
   uint8_t * tmp_ptr = getPixelAddress(x, y);
   if (tmp_ptr == NULL) return;
@@ -114,11 +73,35 @@ void LED_PANEL::setPixelColor(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint
 }
 
 void LED_PANEL::drawPixel(int16_t x, int16_t y, uint16_t color) {
-  if ((x < 0) || (y < 0) || (x >= _width) || (y >= _height)) return;
-  if (BPP == 3)
-    setPixelColor32(x, y, expandColor(color));
-  else
-    setPixelColor16(x, y, color);
+  if ((x < 0) || (y < 0) || (x >= panelWidth) || (y >= panelHeight)) return;
+
+  uint8_t * tmp_ptr = getPixelAddress(x, y);
+  if (tmp_ptr == NULL) return;
+
+  if (BPP == 3) {
+    uint32_t tmp_c = (passThruFlag) ? passThruColor : expandColor(color);
+    *tmp_ptr++ = tmp_c;
+    tmp_c >>= 8;
+    *tmp_ptr++ = tmp_c;
+    tmp_c >>= 8;
+    *tmp_ptr++ = tmp_c;
+  } else {
+    uint16_t tmp_c = color;
+    *tmp_ptr++ = tmp_c;
+    tmp_c >>= 8;
+    *tmp_ptr++ = tmp_c;
+  }
+}
+
+// Pass raw color value to set/enable passthrough
+void LED_PANEL::setPassThruColor(uint32_t c) {
+  passThruColor = c;
+  passThruFlag  = true;
+}
+
+// Call without a value to reset (disable passthrough)
+void LED_PANEL::setPassThruColor(void) {
+  passThruFlag = false;
 }
 
 // Downgrade 24-bit color to 16-bit
@@ -150,11 +133,12 @@ void LED_PANEL::show(void) {
   GPIOB->regs->BSRR = (1 << 1);
 
   uint8_t * tmp_byte = pixels;
+  uint16_t hb = GPIOA->regs->ODR & 0xFF00;
   for (uint16_t i = 0; i < numBytes; i++) {
     // 0 -> CLK
     GPIOB->regs->BRR = (1 << 0);
     // set data
-    GPIOA->regs->ODR = *tmp_byte++;
+    GPIOA->regs->ODR = hb | *tmp_byte++;
     // 1 -> CLK
     GPIOB->regs->BSRR = (1 << 0);
   }
