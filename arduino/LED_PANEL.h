@@ -24,7 +24,7 @@ class LED_PANEL : public Adafruit_GFX {
     ~LED_PANEL();
     void begin(void);
     void clear(void);
-    void show(void);
+    boolean show(void);
     void show(boolean WaitForFinish);
     void setPixelColor(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b);
     void drawPixel(int16_t x, int16_t y, uint16_t color);

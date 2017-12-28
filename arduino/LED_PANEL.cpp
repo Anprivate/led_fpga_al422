@@ -127,8 +127,10 @@ boolean LED_PANEL::OutIsFree(void) {
   return dma_is_free;
 }
 
-void LED_PANEL::show(void) {
+boolean LED_PANEL::show(void) {
+  if (!dma_is_free) return false;
   static_start_transfer(_we_pin, pixels, numBytes);
+  return true;
 }
 
 void LED_PANEL::show(boolean WaitForFinish) {
@@ -141,7 +143,6 @@ void LED_PANEL::static_begin(uint8_t we_pin) {
   if (!begun) {
     timer_clk_dev = PIN_MAP[clk_out].timer_device;
     timer_clk_ch = PIN_MAP[clk_out].timer_channel;
-
 
     gpio_init(data_port);
 
