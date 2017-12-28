@@ -1,2 +1,3 @@
 # led_fpga_al422
-Attention - unfinished project - not working now!!!
+All working, but description only in Russian now.
+English manual will be available soon.
