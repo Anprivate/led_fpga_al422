@@ -5,12 +5,12 @@
 // input color data format - only one line must be uncommented
 // truecolor - 3 bytes per pixel
 // highcolor - 2 bytes per pixel, RGB565 format
-//`define TRUECOLOR	1
-`define HIGHCOLOR	1
+`define TRUECOLOR	1
+//`define HIGHCOLOR	1
 
 // LED panel RGB inputs quantity - only one line must be uncommented
-//`define RGB_out1	1
-`define RGB_out2	1
+`define RGB_out1	1
+//`define RGB_out2	1
 
 // LED panel scan type - only one line must be uncommented
 `define SCAN_x8 	1

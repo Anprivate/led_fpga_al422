@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for al422b_2rgb_8s
-Mon Dec 25 16:19:55 2017
+Thu Jan 11 16:28:10 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -86,7 +86,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------+--------+--------------------------+
 ; SDC File Path      ; Status ; Read at                  ;
 +--------------------+--------+--------------------------+
-; al422b_2rgb_8s.sdc ; OK     ; Mon Dec 25 16:19:55 2017 ;
+; al422b_2rgb_8s.sdc ; OK     ; Thu Jan 11 16:28:10 2018 ;
 +--------------------+--------+--------------------------+
 
 
@@ -104,7 +104,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 53.48 MHz ; 53.48 MHz       ; in_clk     ;      ;
+; 84.03 MHz ; 84.03 MHz       ; in_clk     ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -114,7 +114,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-------+---------------+
 ; Clock  ; Slack ; End Point TNS ;
 +--------+-------+---------------+
-; in_clk ; 1.300 ; 0.000         ;
+; in_clk ; 8.100 ; 0.000         ;
 +--------+-------+---------------+
 
 
@@ -154,430 +154,426 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup: 'in_clk'                                                                                                                                                                         ;
-+-------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                           ; To Node                                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 1.300 ; pwm_cntr[2]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; pwm_cntr[3]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[6]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; pwm_cntr[5]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[5]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[7]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 1.300 ; pwm_cntr[4]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.800     ;
-; 2.100 ; pwm_cntr[2]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.000     ;
-; 2.100 ; pwm_cntr[2]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.000     ;
-; 2.100 ; pwm_cntr[3]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.000     ;
-; 2.100 ; pwm_cntr[3]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 15.000     ;
-; 2.200 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.900     ;
-; 2.200 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.900     ;
-; 2.200 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.900     ;
-; 2.200 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.900     ;
-; 3.000 ; pwm_cntr[4]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.100     ;
-; 3.000 ; pwm_cntr[4]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.100     ;
-; 3.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.000     ;
-; 3.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 14.000     ;
-; 5.100 ; pwm_cntr[0]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 12.000     ;
-; 5.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 12.000     ;
-; 6.000 ; pwm_cntr[0]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[1]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[0]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[1]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[2]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[3]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[0]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[1]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[0]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[1]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[2]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[3]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[1]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[2]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[3]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[4]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[0]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; pwm_cntr[1]                                         ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[7]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[6]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.000 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.100     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[4]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[3]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[2]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[1]  ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[4]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[3]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[2]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 6.100 ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[1]  ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 11.000     ;
-; 8.800 ; in_data[7]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[6]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[5]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[4]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[3]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[2]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[1]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 8.800 ; in_data[0]                                          ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0]      ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; led_row[1]~reg0                                     ; led_row[1]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; led_row[0]~reg0                                     ; led_row[1]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; led_row[1]~reg0                                     ; led_row[2]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; led_row[0]~reg0                                     ; led_row[2]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; led_row[2]~reg0                                     ; led_row[2]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800 ; led_row[3]~reg0                                     ; led_row[4]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-+-------+-----------------------------------------------------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'in_clk'                                                                                                                                                                       ;
++-------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                          ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 8.100 ; pwm_cntr[0]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[4]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[1]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[3]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[2]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[5]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[7]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.100 ; pwm_cntr[6]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 9.000      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[7] ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[6] ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[1] ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[0] ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[3] ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.200 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[2] ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.900      ;
+; 8.800 ; in_data[7]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[7] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[6]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[6] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[5]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[4]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[3]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[3] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[2]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[2] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[1]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[1] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 8.800 ; in_data[0]                                         ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[0] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.900      ;
+; 9.000 ; pwm_cntr[3]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.100      ;
+; 9.000 ; pwm_cntr[2]                                        ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.100      ;
+; 9.100 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.700 ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.800 ; pixel_counter[0]                                   ; pixel_counter[1]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[1]                                   ; pixel_counter[2]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[0]                                   ; pixel_counter[2]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[2]                                   ; pixel_counter[3]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[1]                                   ; pixel_counter[3]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[0]                                   ; pixel_counter[3]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[3]                                   ; pixel_counter[4]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[2]                                   ; pixel_counter[4]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[1]                                   ; pixel_counter[4]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[0]                                   ; pixel_counter[4]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[4]                                   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[3]                                   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[2]                                   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[1]                                   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[0]                                   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[5]                                   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[4]                                   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[3]                                   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[2]                                   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[1]                                   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[0]                                   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[1]~reg0                                    ; led_row[1]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[0]~reg0                                    ; led_row[1]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[1]~reg0                                    ; led_row[2]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[0]~reg0                                    ; led_row[2]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[2]~reg0                                    ; led_row[2]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[3]~reg0                                    ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[2]~reg0                                    ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[1]~reg0                                    ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[0]~reg0                                    ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[4]~reg0                                    ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[2]~reg0                                    ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[1]~reg0                                    ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[0]~reg0                                    ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[4]~reg0                                    ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[3]~reg0                                    ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[1]                                   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[0]                                   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[5]                                   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[4]                                   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[3]                                   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; pixel_counter[2]                                   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[0]~reg0                                    ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[4]~reg0                                    ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[3]~reg0                                    ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[2]~reg0                                    ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; led_row[1]~reg0                                    ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.900 ; pwm_cntr[7]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[6]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[5]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[4]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[3]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[2]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[1]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[0]                                        ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[7]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[6]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[5]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[4]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[3]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[1]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[2]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[0]                                        ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[7]                                        ; pwm_cntr[3]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[6]                                        ; pwm_cntr[3]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; pwm_cntr[5]                                        ; pwm_cntr[3]                                        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
++-------+----------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'in_clk'                                                                                                                                                         ;
-+-------+------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                      ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; lpm_counter:pixel_counter_rtl_0|dffs[0] ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; lpm_counter:pixel_counter_rtl_0|dffs[1] ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; lpm_counter:pixel_counter_rtl_0|dffs[2] ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; lpm_counter:pixel_counter_rtl_0|dffs[3] ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; lpm_counter:pixel_counter_rtl_0|dffs[4] ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; lpm_counter:pixel_counter_rtl_0|dffs[5] ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; led_row[0]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; led_row[1]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; led_row[2]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; led_row[4]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; led_row[3]~reg0                         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[2]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[3]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[4]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[0]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[5]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[4]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[3]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[2]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; lpm_counter:pixel_counter_rtl_0|dffs[1]        ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[0]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[4]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[3]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[2]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; led_row[1]~reg0                                ; pwm_cntr[0]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1] ; pwm_cntr[5]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0] ; pwm_cntr[5]                             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-+-------+------------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
++------------------------------------------------------------------------------------------------------------------+
+; Hold: 'in_clk'                                                                                                   ;
++-------+------------------+-----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node        ; To Node         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------+-----------------+--------------+-------------+--------------+------------+------------+
+; 4.000 ; pixel_counter[5] ; led_row[0]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; led_row[0]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; led_row[0]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; led_row[0]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; led_row[0]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; led_row[0]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; led_row[1]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; led_row[1]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; led_row[1]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; led_row[1]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; led_row[1]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; led_row[1]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; led_row[2]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; led_row[2]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; led_row[2]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; led_row[2]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; led_row[2]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; led_row[2]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; led_row[4]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; led_row[4]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; led_row[4]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; led_row[4]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; led_row[4]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; led_row[4]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; led_row[3]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; led_row[3]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; led_row[3]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; led_row[3]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; led_row[3]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; led_row[3]~reg0 ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0  ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0  ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0  ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0  ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0  ; pwm_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0  ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0  ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0  ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0  ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0  ; pwm_cntr[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0  ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0  ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0  ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0  ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0  ; pwm_cntr[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0  ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0  ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0  ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0  ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0  ; pwm_cntr[4]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0  ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0  ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0  ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0  ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0  ; pwm_cntr[5]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[1] ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[0] ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[0]~reg0  ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[4]~reg0  ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[3]~reg0  ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[2]~reg0  ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; led_row[1]~reg0  ; pwm_cntr[6]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[5] ; pwm_cntr[7]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[4] ; pwm_cntr[7]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[3] ; pwm_cntr[7]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; pixel_counter[2] ; pwm_cntr[7]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
++-------+------------------+-----------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Recovery: 'in_clk'                                                                                                                            ;
-+-------+-----------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node                                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 7.800 ; in_nrst   ; led_oe                                              ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
-; 7.800 ; in_nrst   ; led_row[1]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
-; 7.800 ; in_nrst   ; led_row[2]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
-; 7.800 ; in_nrst   ; al422_nrst~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0]      ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[7]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[6]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[5]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[4]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[3]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[2]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[1]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[0]  ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; led_row[0]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; led_row[4]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; led_row[3]~reg0                                     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[2]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[3]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[4]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[0]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[5]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; pwm_cntr[1]                                         ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-; 9.200 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
-+-------+-----------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'in_clk'                                                                                                                           ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.800 ; in_nrst   ; led_oe                                             ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
+; 7.800 ; in_nrst   ; led_row[1]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
+; 7.800 ; in_nrst   ; led_row[2]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
+; 7.800 ; in_nrst   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 7.900      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[7] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[6] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[3] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[2] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[1] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[0] ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pixel_counter[0]                                   ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pixel_counter[1]                                   ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pixel_counter[2]                                   ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pixel_counter[3]                                   ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pixel_counter[4]                                   ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; led_row[0]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[3]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[4]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[5]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[6]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[7]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; pwm_cntr[0]                                        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|comparator_out    ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[0]        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[1]        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|rgb1[0]           ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[2]        ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|rgb1[1]           ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
+; 9.200 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|rgb1[2]           ; in_clk       ; in_clk      ; 20.000       ; 3.600      ; 6.500      ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Removal: 'in_clk'                                                                                                                             ;
-+-------+-----------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node ; To Node                                             ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0]      ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[7]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[6]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[5]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[4]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[3]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[2]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[1]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[0]  ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; led_row[0]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; led_row[4]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; led_row[3]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[2]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[3]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[4]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[0]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[5]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; pwm_cntr[1]                                         ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 6.600 ; in_nrst   ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
-; 8.000 ; in_nrst   ; led_oe                                              ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
-; 8.000 ; in_nrst   ; led_row[1]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
-; 8.000 ; in_nrst   ; led_row[2]~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
-; 8.000 ; in_nrst   ; al422_nrst~reg0                                     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
-+-------+-----------+-----------------------------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'in_clk'                                                                                                                            ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[7] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[6] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[3] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[2] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[1] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[0] ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pixel_counter[0]                                   ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pixel_counter[1]                                   ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pixel_counter[2]                                   ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pixel_counter[3]                                   ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pixel_counter[4]                                   ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pixel_counter[5]                                   ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; led_row[0]~reg0                                    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; led_row[4]~reg0                                    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; led_row[3]~reg0                                    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[1]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[2]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[3]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[4]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[5]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[6]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[7]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; pwm_cntr[0]                                        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|comparator_out    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[0]        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[1]        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|rgb1[0]           ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[2]        ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|rgb1[1]           ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 6.600 ; in_nrst   ; data_rx_3bytes_1RGB:data_decoder|rgb1[2]           ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 6.500      ;
+; 8.000 ; in_nrst   ; led_oe                                             ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
+; 8.000 ; in_nrst   ; led_row[1]~reg0                                    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
+; 8.000 ; in_nrst   ; led_row[2]~reg0                                    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
+; 8.000 ; in_nrst   ; al422_nrst~reg0                                    ; in_clk       ; in_clk      ; 0.000        ; 3.600      ; 7.900      ;
++-------+-----------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Minimum Pulse Width: 'in_clk'                                                                                                         ;
-+--------+--------------+----------------+------------------+--------+------------+-----------------------------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                              ;
-+--------+--------------+----------------+------------------+--------+------------+-----------------------------------------------------+
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_nrst~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_nrst~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[0]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[0]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[10] ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[11] ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[12] ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[13] ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[14] ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[15] ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[1]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[1]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[2]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[2]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[3]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[3]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[4]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[4]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[5]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[5]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[6]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[6]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[7]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[7]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[8]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|in_data_buffer[9]  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0]      ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[0]      ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|phase_cntr[1]      ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb1[0]            ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb1[1]            ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb1[2]            ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb2[0]            ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb2[1]            ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_2bytes_2RGB:data_decoder|rgb2[2]            ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_oe                                              ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_oe                                              ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[0]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[0]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[1]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[1]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[2]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[2]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[3]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[3]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[4]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[4]~reg0                                     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[0]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[1]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[2]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[3]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[4]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; lpm_counter:pixel_counter_rtl_0|dffs[5]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[0]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[0]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[1]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[1]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[2]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[2]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[3]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[3]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[4]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[4]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[5]                                         ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[5]                                         ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; al422_nrst~reg0|clk                                 ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_nrst~reg0|clk                                 ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[0]|clk                  ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[0]|clk                  ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[10]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[10]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[11]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[11]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[12]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[12]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[13]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[13]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[14]|clk                 ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[14]|clk                 ;
-+--------+--------------+----------------+------------------+--------+------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'in_clk'                                                                                                        ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                             ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------+
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_nrst~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_nrst~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|comparator_out    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|comparator_out    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[0] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[0] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[1] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[1] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[2] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[2] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[3] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[3] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[4] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[5] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[6] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[6] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[7] ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|in_data_buffer[7] ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[0]     ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|phase_cntr[1]     ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|rgb1[0]           ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|rgb1[0]           ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|rgb1[1]           ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|rgb1[1]           ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|rgb1[2]           ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|rgb1[2]           ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_eq            ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_high          ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_low           ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[0]        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[0]        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[1]        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[1]        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[2]        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_rx_3bytes_1RGB:data_decoder|tmp_rgb[2]        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_oe                                             ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_oe                                             ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[0]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[0]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[1]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[1]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[2]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[2]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[3]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[3]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_row[4]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_row[4]~reg0                                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[0]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[0]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[1]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[1]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[2]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[2]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[3]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[3]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[4]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[4]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[5]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[5]                                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[0]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[0]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[1]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[1]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[2]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[2]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[3]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[3]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[4]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[4]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[5]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[5]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[6]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[6]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pwm_cntr[7]                                        ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pwm_cntr[7]                                        ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; al422_nrst~reg0|clk                                ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_nrst~reg0|clk                                ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|comparator_out|clk                    ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|comparator_out|clk                    ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[0]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[0]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[1]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[1]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[2]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[2]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[3]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[3]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[4]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[4]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[5]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[5]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_decoder|in_data_buffer[6]|clk                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_decoder|in_data_buffer[6]|clk                 ;
++--------+--------------+----------------+------------------+--------+------------+----------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -620,8 +616,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
 ; al422_nrst  ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-; led_clk_out ; in_clk     ; 14.000 ; 14.000 ; Rise       ; in_clk          ;
-; led_lat_out ; in_clk     ; 14.000 ; 14.000 ; Rise       ; in_clk          ;
+; led_clk_out ; in_clk     ; 14.100 ; 14.100 ; Rise       ; in_clk          ;
+; led_lat_out ; in_clk     ; 14.100 ; 14.100 ; Rise       ; in_clk          ;
 ; led_oe_out  ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ; led_row[*]  ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ;  led_row[0] ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
@@ -633,10 +629,6 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ;  rgb1[0]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ;  rgb1[1]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ;  rgb1[2]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-; rgb2[*]     ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-;  rgb2[0]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-;  rgb2[1]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-;  rgb2[2]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -646,7 +638,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
 ; al422_nrst  ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-; led_clk_out ; in_clk     ; 14.000 ; 14.000 ; Rise       ; in_clk          ;
+; led_clk_out ; in_clk     ; 14.100 ; 14.100 ; Rise       ; in_clk          ;
 ; led_lat_out ; in_clk     ; 14.000 ; 14.000 ; Rise       ; in_clk          ;
 ; led_oe_out  ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ; led_row[*]  ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
@@ -659,10 +651,6 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ;  rgb1[0]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ;  rgb1[1]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 ;  rgb1[2]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-; rgb2[*]     ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-;  rgb2[0]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-;  rgb2[1]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
-;  rgb2[2]    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -671,7 +659,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 532      ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 489      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -681,7 +669,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 532      ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 489      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -691,7 +679,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 43       ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 41       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -701,7 +689,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 43       ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 41       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -727,8 +715,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 0     ; 0    ;
 ; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 15    ; 15   ;
-; Unconstrained Output Port Paths ; 23    ; 23   ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 20    ; 20   ;
 +---------------------------------+-------+------+
 
 
@@ -738,17 +726,17 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 25 16:19:54 2017
+    Info: Processing started: Thu Jan 11 16:28:09 2018
 Info: Command: quartus_sta al422b_2rgb_8s -c al422b_2rgb_8s
 Info: qsta_default_script.tcl version: #1
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (332104): Reading SDC File: 'al422b_2rgb_8s.sdc'
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332146): Worst-case setup slack is 1.300
+Info (332146): Worst-case setup slack is 8.100
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     1.300         0.000 in_clk 
+    Info (332119):     8.100         0.000 in_clk 
 Info (332146): Worst-case hold slack is 4.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -770,8 +758,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info (144001): Generated suppressed messages file D:/altera/al422b/output_files/al422b_2rgb_8s.sta.smsg
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 355 megabytes
-    Info: Processing ended: Mon Dec 25 16:19:55 2017
+    Info: Peak virtual memory: 351 megabytes
+    Info: Processing ended: Thu Jan 11 16:28:10 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,5 +1,5 @@
 Assembler report for al422b_2rgb_8s
-Mon Dec 25 16:19:53 2017
+Thu Jan 11 16:28:08 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Dec 25 16:19:53 2017 ;
+; Assembler Status      ; Successful - Thu Jan 11 16:28:08 2018 ;
 ; Revision Name         ; al422b_2rgb_8s                        ;
 ; Top-level Entity Name ; led_al422_main                        ;
 ; Family                ; MAX3000A                              ;
@@ -90,7 +90,7 @@ applicable agreement for further details.
 +----------------+-----------------------------------------------------------+
 ; Device         ; EPM3064ATC44-10                                           ;
 ; JTAG usercode  ; 0x00000000                                                ;
-; Checksum       ; 0x000B5FE0                                                ;
+; Checksum       ; 0x000B3D08                                                ;
 +----------------+-----------------------------------------------------------+
 
 
@@ -100,13 +100,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 25 16:19:51 2017
+    Info: Processing started: Thu Jan 11 16:28:07 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off al422b_2rgb_8s -c al422b_2rgb_8s
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Mon Dec 25 16:19:53 2017
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 371 megabytes
+    Info: Processing ended: Thu Jan 11 16:28:08 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -1,5 +1,5 @@
 Flow report for al422b_2rgb_8s
-Mon Dec 25 16:19:57 2017
+Thu Jan 11 16:28:12 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Mon Dec 25 16:19:57 2017           ;
+; Flow Status               ; Successful - Thu Jan 11 16:28:12 2018           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; al422b_2rgb_8s                                  ;
 ; Top-level Entity Name     ; led_al422_main                                  ;
 ; Family                    ; MAX3000A                                        ;
 ; Device                    ; EPM3064ATC44-10                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 53 / 64 ( 83 % )                                ;
+; Total macrocells          ; 51 / 64 ( 80 % )                                ;
 ; Total pins                ; 29 / 34 ( 85 % )                                ;
 +---------------------------+-------------------------------------------------+
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/25/2017 16:19:43 ;
+; Start date & time ; 01/11/2018 16:28:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; al422b_2rgb_8s      ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------------------+-------------------------------+----------------+-------------+------------------------+
 ; Assignment Name                      ; Value                         ; Default Value  ; Entity Name ; Section Id             ;
 +--------------------------------------+-------------------------------+----------------+-------------+------------------------+
-; COMPILER_SIGNATURE_ID                ; 1097448223565.151420798301856 ; --             ; --          ; --                     ;
+; COMPILER_SIGNATURE_ID                ; 1097448223565.151567728315000 ; --             ; --          ; --                     ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --             ; --          ; al422b_2rgb_8s_vlg_tst ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; al422b_2rgb_8s_vlg_tst        ; --             ; --          ; eda_simulation         ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                   ; --             ; --          ; eda_simulation         ;
@@ -90,12 +90,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 422 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 459 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 374 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 355 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 347 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 413 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 455 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 371 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 351 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 343 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

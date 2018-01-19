@@ -1,5 +1,6 @@
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Warning (10230): Verilog HDL assignment warning at led_al422_main.v(142): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at led_al422_main.v(148): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at led_al422_main.v(225): truncated value with size 32 to match size of target (6)
-Warning (10230): Verilog HDL assignment warning at led_al422_main.v(231): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at led_al422_main.v(140): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at led_al422_main.v(146): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at led_al422_main.v(223): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at led_al422_main.v(229): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at data_rx_3bytes_1RGB.v(29): truncated value with size 32 to match size of target (2)
